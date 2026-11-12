@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Адаптивна розмітка</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+        }
+        #wrapper {
+            width: 100%;
+            height: 100vh;
+            padding: 3px;
+        }
+        .block {
+            border: 1px solid #eeeeee;
+        }
+        .blue { background: #5a9ad6; }
+        .cyan { background: #5ad2ce; }
+        .red { background: #de696b; }
+        .green { background: #31a673; }
+        .yellow { background: #ffbe00; }
+        .gray { background: #6b7d84; }
+        .orange { background: #c55910; }
+
+        @media (max-width: 499px) {
+            .block {
+                float: left;
+                margin: 1.5px;
+            }
+            .blue {
+                width: calc(100% - 3px);
+                height: calc(18% - 3px);
+            }
+            .cyan, .red {
+                width: calc(50% - 3px);
+                height: calc(15% - 3px);
+            }
+            .green, .yellow {
+                width: calc(50% - 3px);
+                height: calc(24% - 3px);
+            }
+            .gray {
+                width: calc(100% - 3px);
+                height: calc(22% - 3px);
+            }
+            .orange {
+                width: calc(100% - 3px);
+                height: calc(21% - 3px);
+            }
+        }
+
+        @media (min-width: 500px) and (max-width: 749px) {
+            #wrapper {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 3px;
+            }
+            .blue, .gray, .orange {
+                width: 100%;
+            }
+            .cyan, .red, .green, .yellow {
+                width: calc(50% - 1.5px);
+            }
+            .blue { height: calc(22% - 2.4px); }
+            .cyan, .red { height: calc(15% - 2.4px); }
+            .green, .yellow { height: calc(24% - 2.4px); }
+            .gray { height: calc(22% - 2.4px); }
+            .orange { height: calc(17% - 2.4px); }
+        }
+
+        @media (min-width: 750px) {
+            #wrapper {
+                display: grid;
+                gap: 3px;
+                grid-template-columns: 25fr 24fr 32fr 19fr;
+                grid-template-rows: 31fr 22fr 26fr 21fr;
+                grid-template-areas:
+                    "blue blue blue gray"
+                    "cyan red yellow gray"
+                    "green green yellow gray"
+                    "orange orange orange orange";
+            }
+            .blue { grid-area: blue; }
+            .cyan { grid-area: cyan; }
+            .red { grid-area: red; }
+            .green { grid-area: green; }
+            .yellow { grid-area: yellow; }
+            .gray { grid-area: gray; }
+            .orange { grid-area: orange; }
+        }
+
+        @media (min-width: 950px) {
+            #wrapper {
+                grid-template-columns: 24.6fr 23.8fr 31.9fr 19.7fr;
+                grid-template-rows: 31fr 22fr 26.5fr 20.5fr;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            #wrapper {
+                grid-template-columns: 25fr 24fr 32fr 19fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div class="block blue"></div>
+        <div class="block cyan"></div>
+        <div class="block red"></div>
+        <div class="block green"></div>
+        <div class="block yellow"></div>
+        <div class="block gray"></div>
+        <div class="block orange"></div>
+    </div>
+</body>
+</html>
