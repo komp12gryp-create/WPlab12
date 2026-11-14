@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Commands</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background: #42a5f5;
+            border-bottom: 2px solid red;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 22px;
+        }
+
+        nav a {
+            margin-left: 15px;
+            color: black;
+            text-decoration: none;
+        }
+
+        main {
+            flex: 1;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+
+        .columns {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        h2 {
+            font-size: 19px;
+            margin: 0 0 10px;
+            color: #4c91b5;
+        }
+
+        .branches h2 {
+            color: #7dbb32;
+        }
+
+        .changes h2 {
+            color: #70a629;
+        }
+
+        .sync h2 {
+            color: #e95c30;
+        }
+
+        section {
+            margin-bottom: 25px;
+        }
+
+        .command {
+            margin-bottom: 13px;
+        }
+
+        .command p {
+            margin: 0 0 4px;
+            color: #555;
+            font-size: 13px;
+        }
+
+        code {
+            font-family: Consolas, monospace;
+            font-size: 12px;
+            font-weight: bold;
+            overflow-wrap: anywhere;
+        }
+
+        footer {
+            background: #263238;
+            color: white;
+            padding: 25px;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        @media (max-width: 850px) {
+            .columns {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .columns {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div>
+            <h1>Мій особистий блог</h1>
+            <small>Артем Голуб</small>
+        </div>
+        <nav>
+            <a href="HolubLab10-1.html">Вхід</a>
+            <a href="register.html">Реєстрація</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="columns">
+            <div class="repository">
+                <section>
+                    <h2>Create a Repository</h2>
+
+                    <div class="command">
+                        <p>From scratch - Create a new local repository</p>
+                        <code>$ git init [project name]</code>
+                    </div>
+
+                    <div class="command">
+                        <p>Download from an existing repository</p>
+                        <code>$ git clone my_url</code>
+                    </div>
+                </section>
+            </div>
+
+            <div class="branches"></div>
+            <div class="changes"></div>
+            <div class="sync"></div>
+        </div>
+    </main>
+
+    <footer>
+        © Всі права захищені.
+    </footer>
+</body>
+
+</html>
